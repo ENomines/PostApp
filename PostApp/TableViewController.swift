@@ -1,90 +1,83 @@
-//
-//  TableViewController.swift
-//  PostApp
-//
-//  Created by user145152 on 10/21/18.
-//  Copyright © 2018 user145152. All rights reserved.
-//
-
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class TableViewController: UITableViewController {
-
+    
+    @IBOutlet var postTableView: UITableView!
+    
+    var posts: [Post] = []
+    
+    let postTableViewCellId = "PostTableViewCell"
+    let showFullDescriptionSegueId = "ShowFullDescription"
+    let numberOfSections: Int = 1
+    let tableViewCellRowHeight: CGFloat = 100.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        postTableView.dataSource = self
+        postTableView.delegate = self
+        
+        Alamofire.request("https://jsonplaceholder.typicode.com/posts").responseJSON {
+            response in
+            
+            switch response.result {
+            case .success(let value) :
+                let json = JSON(value)
+                
+                let handler = PostResponseHandler(json)
+                let postList = handler.getPostList()
+                
+                postList?.add(newPost: Post(id: 0, title: "Title", description: "Some text..."))
+                postList?.getPostById(id: 1)?.setTitle(title: "New title")
+                postList?.getPostById(id: 2)?.setDescription(description: "New description"
+                )
+                postList?.sortPostsById()
+                
+                self.posts = postList?.getPostArray() ?? []
+                
+                self.postTableView.reloadData()
+            case .failure(let error) :
+                print("Error\(error)")
+            }
+        }
     }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return numberOfSections
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return posts.count
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        let postTableViewCell: PostTableViewCell = tableView.dequeueReusableCell(withIdentifier: postTableViewCellId, for: indexPath) as! PostTableViewCell
+        
+        let row = indexPath.row
+        postTableViewCell.titleLabel.text = posts[row].getTitle()
+        postTableViewCell.descriptionLabel.text = posts[row].getDescription()
+        
+        return postTableViewCell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: showFullDescriptionSegueId, sender: self)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableViewCellRowHeight
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == showFullDescriptionSegueId {
+            let postViewController = segue.destination as! PostViewController
+            
+            if let indexPath = postTableView.indexPathForSelectedRow {
+                postViewController.post = posts[indexPath.row]
+            }
+            
+        }
     }
-    */
-
 }

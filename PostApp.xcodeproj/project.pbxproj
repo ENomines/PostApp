@@ -7,13 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842E39A7216DD54E00549302 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E39A6216DD54E00549302 /* PostViewController.swift */; };
+		84A19B3B217C55B900F42693 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A19B3A217C55B900F42693 /* TableViewController.swift */; };
+		84A19B3D217C650300F42693 /* ResponseHandlerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A19B3C217C650300F42693 /* ResponseHandlerInterface.swift */; };
+		84A59ACB217080EC0081E9D4 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A59ACA217080EC0081E9D4 /* PostTableViewCell.swift */; };
+		84C8FCCD216B37840024DAE9 /* PostResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8FCCC216B37840024DAE9 /* PostResponseHandler.swift */; };
+		84C8FCCF216B395D0024DAE9 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8FCCE216B395D0024DAE9 /* PostList.swift */; };
+		84CE24A12179D40900F37B92 /* PostInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE24A02179D40900F37B92 /* PostInterface.swift */; };
+		84CE24A32179D41000F37B92 /* PostListInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE24A22179D41000F37B92 /* PostListInterface.swift */; };
 		84FA70B02165CAF500509665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA70AF2165CAF500509665 /* AppDelegate.swift */; };
-		84FA70B22165CAF500509665 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA70B12165CAF500509665 /* ViewController.swift */; };
 		84FA70B52165CAF500509665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FA70B32165CAF500509665 /* Main.storyboard */; };
 		84FA70B72165CAF600509665 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FA70B62165CAF600509665 /* Assets.xcassets */; };
 		84FA70BA2165CAF600509665 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FA70B82165CAF600509665 /* LaunchScreen.storyboard */; };
 		84FA70C52165CAF700509665 /* PostAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA70C42165CAF700509665 /* PostAppTests.swift */; };
 		84FA70D02165CAF700509665 /* PostAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA70CF2165CAF700509665 /* PostAppUITests.swift */; };
+		84FA70DE2165CDCB00509665 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA70DD2165CDCB00509665 /* Post.swift */; };
+		F5CCC62E3E43B285A77DDFDB /* Pods_PostApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED7FF2177A3FFDA74EA9314 /* Pods_PostApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +43,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B7F5CDF07CCA991D21FC16E /* Pods-PostApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PostApp/Pods-PostApp.debug.xcconfig"; sourceTree = "<group>"; };
+		38687D36C0CC908BDA7D068E /* Pods-PostApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PostApp/Pods-PostApp.release.xcconfig"; sourceTree = "<group>"; };
+		842E39A6216DD54E00549302 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		84A19B3A217C55B900F42693 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		84A19B3C217C650300F42693 /* ResponseHandlerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandlerInterface.swift; sourceTree = "<group>"; };
+		84A59ACA217080EC0081E9D4 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		84C8FCCC216B37840024DAE9 /* PostResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResponseHandler.swift; sourceTree = "<group>"; };
+		84C8FCCE216B395D0024DAE9 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
+		84CE24A02179D40900F37B92 /* PostInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostInterface.swift; sourceTree = "<group>"; };
+		84CE24A22179D41000F37B92 /* PostListInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListInterface.swift; sourceTree = "<group>"; };
 		84FA70AC2165CAF500509665 /* PostApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FA70AF2165CAF500509665 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84FA70B12165CAF500509665 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84FA70B42165CAF500509665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84FA70B62165CAF600509665 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84FA70B92165CAF600509665 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +65,8 @@
 		84FA70CB2165CAF700509665 /* PostAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PostAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FA70CF2165CAF700509665 /* PostAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAppUITests.swift; sourceTree = "<group>"; };
 		84FA70D12165CAF700509665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84FA70DD2165CDCB00509665 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		9ED7FF2177A3FFDA74EA9314 /* Pods_PostApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PostApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5CCC62E3E43B285A77DDFDB /* Pods_PostApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +95,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23608C83C4DC37510E442438 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1B7F5CDF07CCA991D21FC16E /* Pods-PostApp.debug.xcconfig */,
+				38687D36C0CC908BDA7D068E /* Pods-PostApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6A685E38E15A7D7185676E00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9ED7FF2177A3FFDA74EA9314 /* Pods_PostApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84CE249B2179D32800F37B92 /* interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				84CE24A22179D41000F37B92 /* PostListInterface.swift */,
+				84CE24A02179D40900F37B92 /* PostInterface.swift */,
+				84A19B3C217C650300F42693 /* ResponseHandlerInterface.swift */,
+			);
+			name = interfaces;
+			sourceTree = "<group>";
+		};
 		84FA70A32165CAF500509665 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +129,8 @@
 				84FA70C32165CAF700509665 /* PostAppTests */,
 				84FA70CE2165CAF700509665 /* PostAppUITests */,
 				84FA70AD2165CAF500509665 /* Products */,
+				23608C83C4DC37510E442438 /* Pods */,
+				6A685E38E15A7D7185676E00 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +147,18 @@
 		84FA70AE2165CAF500509665 /* PostApp */ = {
 			isa = PBXGroup;
 			children = (
+				84CE249B2179D32800F37B92 /* interfaces */,
+				84A19B3A217C55B900F42693 /* TableViewController.swift */,
+				84A59ACA217080EC0081E9D4 /* PostTableViewCell.swift */,
 				84FA70AF2165CAF500509665 /* AppDelegate.swift */,
-				84FA70B12165CAF500509665 /* ViewController.swift */,
 				84FA70B32165CAF500509665 /* Main.storyboard */,
 				84FA70B62165CAF600509665 /* Assets.xcassets */,
 				84FA70B82165CAF600509665 /* LaunchScreen.storyboard */,
 				84FA70BB2165CAF600509665 /* Info.plist */,
+				84FA70DD2165CDCB00509665 /* Post.swift */,
+				84C8FCCC216B37840024DAE9 /* PostResponseHandler.swift */,
+				84C8FCCE216B395D0024DAE9 /* PostList.swift */,
+				842E39A6216DD54E00549302 /* PostViewController.swift */,
 			);
 			path = PostApp;
 			sourceTree = "<group>";
@@ -132,9 +188,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84FA70D42165CAF700509665 /* Build configuration list for PBXNativeTarget "PostApp" */;
 			buildPhases = (
+				79280CB32D0CD47B50C617F1 /* [CP] Check Pods Manifest.lock */,
 				84FA70A82165CAF500509665 /* Sources */,
 				84FA70A92165CAF500509665 /* Frameworks */,
 				84FA70AA2165CAF500509665 /* Resources */,
+				84FBC9F7216B6B2500BF51A4 /* ShellScript */,
+				2D6A5AD76BBDD771008DED10 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,13 +310,88 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D6A5AD76BBDD771008DED10 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PostApp/Pods-PostApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PostApp/Pods-PostApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79280CB32D0CD47B50C617F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PostApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84FBC9F7216B6B2500BF51A4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84FA70A82165CAF500509665 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84FA70B22165CAF500509665 /* ViewController.swift in Sources */,
+				84FA70DE2165CDCB00509665 /* Post.swift in Sources */,
+				84CE24A32179D41000F37B92 /* PostListInterface.swift in Sources */,
+				84A19B3B217C55B900F42693 /* TableViewController.swift in Sources */,
+				84C8FCCF216B395D0024DAE9 /* PostList.swift in Sources */,
+				842E39A7216DD54E00549302 /* PostViewController.swift in Sources */,
+				84A59ACB217080EC0081E9D4 /* PostTableViewCell.swift in Sources */,
+				84C8FCCD216B37840024DAE9 /* PostResponseHandler.swift in Sources */,
+				84A19B3D217C650300F42693 /* ResponseHandlerInterface.swift in Sources */,
 				84FA70B02165CAF500509665 /* AppDelegate.swift in Sources */,
+				84CE24A12179D40900F37B92 /* PostInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,9 +564,14 @@
 		};
 		84FA70D52165CAF700509665 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7F5CDF07CCA991D21FC16E /* Pods-PostApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PostApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,9 +586,14 @@
 		};
 		84FA70D62165CAF700509665 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38687D36C0CC908BDA7D068E /* Pods-PostApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PostApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
