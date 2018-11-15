@@ -1,6 +1,6 @@
 protocol PostListInterface {
-    func add(newPost: Post)
+    func add(newPost: DTOPost)
     func sortPostsById()
-    func getPostById(id: Int) -> Post?
-    func getPostArray() -> [Post]?
+    func getPostById(id: Int) -> DTOPost?
+    func getPostArray() -> [DTOPost]?
 }
