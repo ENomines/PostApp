@@ -1,5 +1,5 @@
 import SwiftyJSON
 
 protocol ResponseHandlerInterface {
-    func handle(response: JSON)
+   func handle(callback: @escaping (JSON) -> Void)
 }

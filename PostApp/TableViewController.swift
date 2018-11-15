@@ -6,7 +6,7 @@ class TableViewController: UITableViewController {
     
     @IBOutlet var postTableView: UITableView!
     
-    var posts: [Post] = []
+    var posts: [DTOPost] = []
     
     let postTableViewCellId = "PostTableViewCell"
     let showFullDescriptionSegueId = "ShowFullDescription"
@@ -15,33 +15,18 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.estimatedRowHeight = 80
+        self.tableView.rowHeight = UITableView.automaticDimension
 
         postTableView.dataSource = self
         postTableView.delegate = self
         
-        Alamofire.request("https://jsonplaceholder.typicode.com/posts").responseJSON {
-            response in
-            
-            switch response.result {
-            case .success(let value) :
-                let json = JSON(value)
-                
-                let handler = PostResponseHandler(json)
-                let postList = handler.getPostList()
-                
-                postList?.add(newPost: Post(id: 0, title: "Title", description: "Some text..."))
-                postList?.getPostById(id: 1)?.setTitle(title: "New title")
-                postList?.getPostById(id: 2)?.setDescription(description: "New description"
-                )
-                postList?.sortPostsById()
-                
-                self.posts = postList?.getPostArray() ?? []
-                
-                self.postTableView.reloadData()
-            case .failure(let error) :
-                print("Error\(error)")
-            }
-        }
+        APIManager.getPostList(callback: {
+            (postList) in
+            self.posts = postList.getPostArray() ?? []
+            self.postTableView.reloadData()
+        })
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,8 +41,8 @@ class TableViewController: UITableViewController {
         let postTableViewCell: PostTableViewCell = tableView.dequeueReusableCell(withIdentifier: postTableViewCellId, for: indexPath) as! PostTableViewCell
         
         let row = indexPath.row
-        postTableViewCell.titleLabel.text = posts[row].getTitle()
-        postTableViewCell.descriptionLabel.text = posts[row].getDescription()
+        postTableViewCell.titleLabel.text = posts[row].title
+        postTableViewCell.descriptionLabel.text = posts[row].description
         
         return postTableViewCell
     }

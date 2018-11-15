@@ -1,34 +1,29 @@
-/*
-    Тут возник вопрос. Исходя из принципа инверсии зависисмостей класс поста нужно убрать и использовать интерфейс.
-    Или это касается только классов из другой функциональности? То есть PostList здесь выступает в роли контейнера именно для поста. Функции тоже должны возвращать интерфейс? Свойства класса тоже должны быть интерфейсом?
- */
-
 public class PostList: PostListInterface {
-    private var posts: [Post]
+    private var posts: [DTOPost]
     
     public init() {
         self.posts = []
     }
 
-    public init(posts: [Post]) {
+    public init(posts: [DTOPost]) {
         self.posts = posts
     }
     
-    public func add(newPost: Post) {
+    public func add(newPost: DTOPost) {
         posts.append(newPost)
     }
     
     public func sortPostsById() {
-        posts.sort{ $0.getId() < $1.getId() }
+        posts.sort{ $0.id < $1.id }
     }
     
-    public func getPostArray() -> [Post]? {
+    public func getPostArray() -> [DTOPost]? {
         return posts
     }
     
-    public func getPostById(id: Int) -> Post? {
+    public func getPostById(id: Int) -> DTOPost? {
         for post in posts {
-            if post.getId() == id {
+            if post.id == id {
                 return post
             }
         }

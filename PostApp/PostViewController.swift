@@ -5,13 +5,13 @@ class PostViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     
-    public var post: Post?
+    public var post: DTOPost?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLabel.text = post?.getTitle()
-        descriptionTextView.text = post?.getDescription()
+        titleLabel.text = post?.title
+        descriptionTextView.text = post?.description
     }
     
 }
